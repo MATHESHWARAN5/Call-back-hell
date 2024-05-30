@@ -1,0 +1,98 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #282c34;
+    color: white;
+}
+
+#container {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    position: relative;
+}
+
+#display {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    #display {
+        font-size: 2em;
+    }
+}
+
+.balloon, .flag {
+    position: absolute;
+    animation: float 5s ease-in-out infinite;
+}
+
+.balloon {
+    width: 50px;
+    height: 70px;
+    background-color: red;
+    border-radius: 0 0 25px 25px;
+    transform-origin: bottom center;
+}
+
+.balloon:before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 2px;
+    height: 10px;
+    background-color: black;
+}
+
+.flag {
+    width: 100px;
+    height: auto;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(-10deg);
+    }
+    50% {
+        transform: translateY(-100px) rotate(10deg);
+    }
+    100% {
+        transform: translateY(0) rotate(-10deg);
+    }
+}
+
+#container .balloon:nth-child(1) {
+    background-color: red;
+    left: 20%;
+}
+
+#container .balloon:nth-child(2) {
+    background-color: blue;
+    left: 40%;
+}
+
+#container .balloon:nth-child(3) {
+    background-color: green;
+    left: 60%;
+}
+
+#container .balloon:nth-child(4) {
+    background-color: yellow;
+    left: 80%;
+}
+
+#container .flag:nth-child(5) {
+    left: 10%;
+}
+
+#container .flag:nth-child(6) {
+    left: 90%;
+}
